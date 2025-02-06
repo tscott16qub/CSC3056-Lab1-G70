@@ -7,11 +7,11 @@ public class TestUtils {
     public static final String TEXT_COLOR_RESET = "\u001B[0m";
     
 	public static void printTestPassed(String test_case_name) {
-		System.out.println(TestUtils.TEXT_COLOR_GREEN + test_case_name + TestUtils.TEXT_COLOR_RESET);
+		System.out.println(TestUtils.TEXT_COLOR_GREEN + test_case_name + " Success" + TestUtils.TEXT_COLOR_RESET);
 		
 	}
 	public static void printTestFailed(String test_case_name) {
-		System.out.println(TestUtils.TEXT_COLOR_RED + test_case_name + TestUtils.TEXT_COLOR_RESET);
+		System.out.println(TestUtils.TEXT_COLOR_RED + test_case_name + " Failed" + TestUtils.TEXT_COLOR_RESET);
 		
 	} 
 	
