@@ -10,7 +10,7 @@ import model.Account;
 import model.Transaction;
 import model.User;
 
-public class SimpleBankingApp {
+public class SimpleBankingAppSOLVED {
 	public static Vector<User> users = new Vector<User>();
 	public static Vector<Account> accounts  = new Vector<Account>();
 	public static Vector<Transaction> transactions =  new Vector<Transaction>();
