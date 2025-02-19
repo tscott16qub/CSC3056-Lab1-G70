@@ -4,7 +4,7 @@ import java.util.List;
 import model.User;
 
 public class UserController {
-	private List<User> users;
+	public List<User> users;
 	
 	public UserController(List<User> users) {
         this.users = users;
