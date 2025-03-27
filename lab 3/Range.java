@@ -300,8 +300,28 @@ public strictfp class Range implements Serializable {
     }
     */
     
-    //Combine Method Mutation test 5
-    
+    //Combine Method Mutation test 5 UOI - Unary operator insertion
+    /* public static Range combine(Range range1, Range range2) {
+        if (range1 == null) {
+            return range2;
+        }
+        else {
+            if (range2 == null) {
+                return range1;
+            }
+            else {
+            	// Inserted mutation bitwise complement (~) to lower bound
+                double l = (double)~(int)Math.min(range1.getLowerBound(), 
+                        range2.getLowerBound());
+             // Inserted mutation bitwise complement (~) to upper bound
+                double u = (double)~(int)Math.max(range1.getUpperBound(), 
+                        range2.getUpperBound());
+                return new Range(l, u);
+            }
+        }
+    }
+    */
+
     /**
      * Returns a range that includes all the values in the specified 
      * <code>range</code> AND contains the specified <code>value</code>.
