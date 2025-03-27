@@ -256,7 +256,28 @@ public strictfp class Range implements Serializable {
         }
     }
     
-    //Combine Method Mutation test 3
+    //Combine Method Mutation test 3 BSR - Bomb statement replacement
+    /* public static Range combine(Range range1, Range range2) {
+    	 // Mutation Point 1: Bomb Statement Replacement for first null check
+    	if (range1 == null) {
+            
+        	throw new RuntimeException("Mutation Bomb: First Null Check");
+        	//return range2;
+        }
+        else {
+            if (range2 == null) {
+                return range1;
+            }
+            else {
+                double l = Math.min(range1.getLowerBound(), 
+                        range2.getLowerBound());
+                double u = Math.max(range1.getUpperBound(), 
+                        range2.getUpperBound());
+                return new Range(l, u);
+            }
+        }
+    }
+   */
     
     //Combine Method Mutation test 4 Variable Replacement
    /*
