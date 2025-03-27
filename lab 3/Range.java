@@ -197,7 +197,6 @@ public strictfp class Range implements Serializable {
      */
     
     //Default Combine method
-    /*
     public static Range combine(Range range1, Range range2) {
         if (range1 == null) {
             return range2;
@@ -215,7 +214,6 @@ public strictfp class Range implements Serializable {
             }
         }
     }
-    */
     
     //Combine Method Mutation test 1 Relational Operator Replacement (ROR)
    /*
@@ -238,6 +236,7 @@ public strictfp class Range implements Serializable {
     }
     */
     //Combine Method Mutation test 2 Arithmetic Operator Replacement (AOR)
+    /*
     public static Range combine(Range range1, Range range2) {
         if (range1 == null) {
             return range2;
@@ -255,7 +254,7 @@ public strictfp class Range implements Serializable {
             }
         }
     }
-    
+    */
     //Combine Method Mutation test 3 BSR - Bomb statement replacement
     /* public static Range combine(Range range1, Range range2) {
     	 // Mutation Point 1: Bomb Statement Replacement for first null check
@@ -315,6 +314,26 @@ public strictfp class Range implements Serializable {
                         range2.getLowerBound());
              // Inserted mutation bitwise complement (~) to upper bound
                 double u = (double)~(int)Math.max(range1.getUpperBound(), 
+                        range2.getUpperBound());
+                return new Range(l, u);
+            }
+        }
+    }
+    */
+    //Combine Method Mutation test 6 Logical Connector Mutaions (LCM)
+    /*
+    public static Range combine(Range range1, Range range2) {
+        if (!(range1 == null)) {
+            return range2;
+        }
+        else {
+            if (range2 == null) {
+                return range1;
+            }
+            else {
+                double l = Math.min(range1.getLowerBound(), 
+                        range2.getLowerBound());
+                double u = Math.max(range1.getUpperBound(), 
                         range2.getUpperBound());
                 return new Range(l, u);
             }
