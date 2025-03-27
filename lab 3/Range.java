@@ -195,6 +195,9 @@ public strictfp class Range implements Serializable {
      *
      * @return A new range subsuming both input ranges (possibly <code>null</code>).
      */
+    
+    //Default Combine method
+    /*
     public static Range combine(Range range1, Range range2) {
         if (range1 == null) {
             return range2;
@@ -212,6 +215,52 @@ public strictfp class Range implements Serializable {
             }
         }
     }
+    */
+    
+    //Combine Method Mutation test 1 Relational Operator Replacement (ROR)
+   /*
+    public static Range combine(Range range1, Range range2) {
+        if (range1 != null) { //Mutated from range1 == null
+            return range2;
+        }
+        else {
+            if (range2 == null) {
+                return range1;
+            }
+            else {
+                double l = Math.min(range1.getLowerBound(), 
+                        range2.getLowerBound());
+                double u = Math.max(range1.getUpperBound(), 
+                        range2.getUpperBound());
+                return new Range(l, u);
+            }
+        }
+    }
+    */
+    //Combine Method Mutation test 2 Arithmetic Operator Replacement (AOR)
+    public static Range combine(Range range1, Range range2) {
+        if (range1 == null) {
+            return range2;
+        }
+        else {
+            if (range2 == null) {
+                return range1;
+            }
+            else {
+                double l = Math.max(range1.getLowerBound(), //Mutated from Math.min to Math.max
+                        range2.getLowerBound());
+                double u = Math.max(range1.getUpperBound(), 
+                        range2.getUpperBound());
+                return new Range(l, u);
+            }
+        }
+    }
+    
+    //Combine Method Mutation test 3
+    
+    //Combine Method Mutation test 4
+    
+    //Combine Method Mutation test 5
     
     /**
      * Returns a range that includes all the values in the specified 
